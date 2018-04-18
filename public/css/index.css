@@ -1,0 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-style: oblique;
+}
+
+h4 {
+  font-size: 24px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+p {
+  font-weight: bold;
+}
