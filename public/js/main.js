@@ -3,8 +3,6 @@ window.onload = function() {
 
   //grab elements:
   var fullLocation = document.querySelector('.location');
-  var cityName = document.querySelector('.city-name');
-  var stateName = document.querySelector('.state');
   var zipCode = document.querySelector('.zip-code');
   var weatherType = document.querySelector('.weather');
   var tempString = document.querySelector('.temp-string');
@@ -40,8 +38,6 @@ window.onload = function() {
       success : function(parsed_json) {
       //get info:
       var location = parsed_json['current_observation']['display_location']['full'];
-      var city = parsed_json['current_observation']['display_location']['city'];
-      var state = parsed_json['current_observation']['display_location']['state'];
       var zip = parsed_json['current_observation']['display_location']['zip'];
       var weather = parsed_json['current_observation']['weather'];
       var temp = parsed_json['current_observation']['temperature_string'];
@@ -54,8 +50,6 @@ window.onload = function() {
 
       //append to HTML:
       fullLocation.textContent = location
-      cityName.textContent = city;
-      stateName.textContent = state;
       zipCode.textContent = zip;
       weatherType.textContent = weather;
       tempString.textContent = temp;

@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-style: oblique;
+  font-style: normal;
 }
 
 h4 {
@@ -14,4 +14,8 @@ h4 {
 
 p {
   font-weight: bold;
+}
+
+.form {
+  text-align: center;
 }
