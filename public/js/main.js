@@ -57,7 +57,7 @@ window.onload = function() {
       windDirection.textContent = windD;
       windMPH.textContent = windM;
       feelsLike.textContent = feels;
-      forecastUrl.innerHTML = '<a href="' + forecast + '">Click for ' + location + ' ' + 'Forecast</a>';
+      forecastUrl.innerHTML = '<a href="' + forecast + '">Forecast for ' + location + '</a>';
       iconUrl.innerHTML = '<img src="' + url + '"/>';
 
     }
