@@ -51,12 +51,12 @@ window.onload = function() {
       //append to HTML:
       fullLocation.textContent = location
       zipCode.textContent = zip;
-      weatherType.textContent = weather;
+      weatherType.innerHTML = '<h2>Right Now:</h2>' + '<br>' + weather;
       tempString.textContent = temp;
-      relHumidity.textContent = humid;
-      windDirection.textContent = windD;
-      windMPH.textContent = windM;
-      feelsLike.textContent = feels;
+      relHumidity.textContent = 'Humidity: ' + humid;
+      windDirection.textContent = 'Wind Direction: ' + windD;
+      windMPH.textContent = ' Wind Speed: ' + windM + ' MPH';
+      feelsLike.innerHTML = 'Feels like: ' + feels;
       forecastUrl.innerHTML = '<a href="' + forecast + '">Forecast for ' + location + '</a>';
       iconUrl.innerHTML = '<img src="' + url + '"/>';
 
