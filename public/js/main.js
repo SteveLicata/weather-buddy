@@ -1,7 +1,7 @@
 window.onload = function() {
   console.log("DOM content loaded");
 
-  //grab elements:
+  //grab elements from weather.erb:
   var fullLocation = document.querySelector('.location');
   var countryName;
   var zipCode = document.querySelector('.zip-code');
@@ -17,6 +17,7 @@ window.onload = function() {
   var dewpointString = document.querySelector('.dewpoint-string');
   var forecastUrl = document.querySelector('.forecast');
 
+  // clIck event for submit button
   document.querySelector('#submit-button').addEventListener('click', function(event){
     //prevent refresh default
     event.preventDefault();
@@ -36,6 +37,7 @@ window.onload = function() {
     var combinedUrl = endPoint + stateInput + "/" + cityInput + ".json";
     console.log(combinedUrl);
 
+    // api call
     $.ajax({
       url : combinedUrl,
       dataType : "jsonp",
@@ -56,7 +58,7 @@ window.onload = function() {
       var forecast = parsed_json['current_observation']['forecast_url'];
       var url = parsed_json['current_observation']['icon_url'];
 
-      //append to HTML:
+      //append api information to HTML in weather.erb:
       fullLocation.textContent = location + ', ' + country;
       zipCode.textContent = zip;
       weatherType.innerHTML = '<h2>Right Now:</h2>' + '<br>' + weather;
