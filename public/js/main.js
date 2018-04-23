@@ -3,15 +3,19 @@ window.onload = function() {
 
   //grab elements:
   var fullLocation = document.querySelector('.location');
+  var countryName;
   var zipCode = document.querySelector('.zip-code');
   var weatherType = document.querySelector('.weather');
+  var iconUrl = document.querySelector('.icon-url');
   var tempString = document.querySelector('.temp-string');
+  var feelsLike = document.querySelector('.feels-like');
   var relHumidity = document.querySelector('.rel-humidity');
   var windDirection = document.querySelector('.wind-direction');
   var windMPH = document.querySelector('.wind-mph');
-  var feelsLike = document.querySelector('.feels-like');
+  var visibilityMi = document.querySelector('.visibility-mi');
+  var heatIndexString = document.querySelector('.heat-index');
+  var dewpointString = document.querySelector('.dewpoint-string');
   var forecastUrl = document.querySelector('.forecast');
-  var iconUrl = document.querySelector('.icon-url');
 
   document.querySelector('#submit-button').addEventListener('click', function(event){
     //prevent refresh default
@@ -38,6 +42,7 @@ window.onload = function() {
       success : function(parsed_json) {
       //get info:
       var location = parsed_json['current_observation']['display_location']['full'];
+      var country = parsed_json['current_observation']['display_location']['country'];
       var zip = parsed_json['current_observation']['display_location']['zip'];
       var weather = parsed_json['current_observation']['weather'];
       var temp = parsed_json['current_observation']['temperature_string'];
@@ -45,20 +50,26 @@ window.onload = function() {
       var windD = parsed_json['current_observation']['wind_dir'];
       var windM = parsed_json['current_observation']['wind_mph'];
       var feels = parsed_json['current_observation']['feelslike_f'];
+      var visibility = parsed_json['current_observation']['visibility_mi'];
+      var heatIndex = parsed_json['current_observation']['heat_index_string'];
+      var dewpoint = parsed_json['current_observation']['dewpoint_string'];
       var forecast = parsed_json['current_observation']['forecast_url'];
       var url = parsed_json['current_observation']['icon_url'];
 
       //append to HTML:
-      fullLocation.textContent = location
+      fullLocation.textContent = location + ', ' + country;
       zipCode.textContent = zip;
       weatherType.innerHTML = '<h2>Right Now:</h2>' + '<br>' + weather;
+      iconUrl.innerHTML = '<img src="' + url + '"/>';
       tempString.textContent = temp;
+      feelsLike.innerHTML = 'Feels Like: ' + feels;
       relHumidity.textContent = 'Humidity: ' + humid;
       windDirection.textContent = 'Wind Direction: ' + windD;
-      windMPH.textContent = ' Wind Speed: ' + windM + ' MPH';
-      feelsLike.innerHTML = 'Feels like: ' + feels;
+      windMPH.textContent = 'Wind Speed: ' + windM + ' MPH';
+      visibilityMi.textContent = 'Visibility: ' + visibility + ' Miles';
+      heatIndexString.textContent = 'Heat Index: ' + heatIndex;
+      dewpointString.textContent = 'Dewpoint: ' + dewpoint;
       forecastUrl.innerHTML = '<a href="' + forecast + '">Forecast for ' + location + '</a>';
-      iconUrl.innerHTML = '<img src="' + url + '"/>';
 
     }
     }).fail(function(response) {
