@@ -1,19 +1,26 @@
 body {
-  background-color: lightblue;
+  background-color: #283149;
 }
 
 h1 {
   font-style: normal;
+  color: #F73859;
+}
+
+h3 {
+  color: black;
 }
 
 h4 {
   font-size: 24px;
   font-style: italic;
   text-decoration: underline;
+  color: #404B69;
 }
 
 p {
   font-weight: bold;
+  color: #DBEDF3;
 }
 
 .form {
@@ -31,4 +38,8 @@ a {
 a:hover {
   color: white;
   text-decoration: none;
+}
+
+.forecast {
+  font-size: 25px;
 }
