@@ -2,6 +2,8 @@ window.onload = function() {
   console.log("DOM content loaded");
 
   //grab elements from weather.erb:
+  var text1 = document.querySelector('#text1');
+  var text2 = document.querySelector('#text2');
   var fullLocation = document.querySelector('.location');
   var countryName;
   var zipCode = document.querySelector('.zip-code');
@@ -87,4 +89,24 @@ window.onload = function() {
 
   });//end click event
 
+
+  // Code to append text one letter at a time:
+  // https://stackoverflow.com/questions/7264974/show-text-letter-by-letter
+  var showText = function (target, message, index, interval) {
+  if (index < message.length) {
+    $(target).append(message[index++]);
+    setTimeout(function () {
+      showText(target, message, index, interval); }, interval);
+    }
+  }
+
+  // call function to append first batch of text
+  $(function () {
+    showText("#text1", "Get the current weather", 0, 500);
+  });
+
+  // call function to append second batch of text
+  $(function () {
+    showText("#text2", "Search by city and state", 0, 500);
+  });
 };//end DOM loaded
