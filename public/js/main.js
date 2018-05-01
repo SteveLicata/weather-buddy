@@ -96,7 +96,8 @@ window.onload = function() {
   if (index < message.length) {
     $(target).append(message[index++]);
     setTimeout(function () {
-      showText(target, message, index, interval); }, interval);
+      showText(target, message, index, interval);
+      }, interval);
     }
   }
 
@@ -109,4 +110,6 @@ window.onload = function() {
   $(function () {
     showText("#text2", "Search by city and state", 0, 500);
   });
+
+  
 };//end DOM loaded
