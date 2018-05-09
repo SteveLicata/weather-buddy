@@ -19,13 +19,11 @@
     </div>
   </div>
 
-  <br>
-
   <!-- displays search form -->
   <div class="row">
     <div class="col-sm-12 form">
       <!-- State Input by User -->
-      <form method="post" name="form" onsubmit="return validate();">
+      <form method="post" name="form" onsubmit="return validation()">
         <label>
           <p>
             State: (Ex: Texas or TX)
@@ -53,9 +51,9 @@
   <!-- displays location, country, zip -->
   <div class="row">
     <div class="col-sm-12">
-      <p class="location">
+      <center><p class="location">
       </p>
-      <p class="zip-code">
+      <center><p class="zip-code">
       </p>
     </div>
   </div>
@@ -63,13 +61,14 @@
   <!-- displays link to weather forecast -->
   <div class="row">
     <div class="col-sm-12">
-      <p class="forecast">
+      <center><p class="forecast">
       </p>
     </div>
   </div>
 
   <!-- displays current weather conditions -->
   <div class="content">
+    <div class="divone">
       <p class="weather">
       </p>
       <p class="icon-url">
@@ -78,6 +77,8 @@
       </p>
       <p class="feels-like">
       </p>
+    </div>
+    <div class="divtwo">
       <p class="rel-humidity">
       </p>
       <p class="wind-string">
@@ -86,17 +87,21 @@
       </p>
       <p class="wind-mph">
       </p>
+    </div>
+    <div class="divthree">
       <p class="visibility-mi">
       </p>
       <p class="heat-index">
       </p>
       <p class="dewpoint-string">
       </p>
+    </div>
   </div>
 
   <hr>
 
 </div>
+<!-- container end -->
 
 <div class="footer">
   <h3>
