@@ -127,6 +127,8 @@ window.onload = function() {
     if (stateSearch == "") {
       alert('Enter a State');
       return false;
+    } else {
+      return true;
     }
   };
 
@@ -137,6 +139,8 @@ window.onload = function() {
     if (citySearch == "") {
       alert('Enter a City');
       return false;
+    } else {
+      return true;
     }
   };
 

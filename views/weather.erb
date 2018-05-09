@@ -25,16 +25,15 @@
   <div class="row">
     <div class="col-sm-12 form">
       <!-- State Input by User -->
-      <form>
+      <form method="post" name="form" onsubmit="return validate();">
         <label>
           <p>
             State: (Ex: Texas or TX)
           </p>
           <input id="state-search" type="text" name="state">
         </label>
-      </form>
+        <br>
       <!-- City Input by User -->
-      <form>
         <label>
           <p>
             City:
@@ -70,8 +69,7 @@
   </div>
 
   <!-- displays current weather conditions -->
-  <div class="row content">
-    <div class="col-sm-12">
+  <div class="content">
       <p class="weather">
       </p>
       <p class="icon-url">
@@ -94,7 +92,6 @@
       </p>
       <p class="dewpoint-string">
       </p>
-    </div>
   </div>
 
   <hr>
