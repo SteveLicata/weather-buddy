@@ -111,5 +111,45 @@ window.onload = function() {
     showText("#text2", "Search by city and state", 0, 500);
   });
 
-  
+
+  // validate submission form
+
+  // submit button
+  var submitButton = document.querySelector('#submit-button');
+  submitButton.addEventListener('click', function(){
+    validate();
+  });
+
+  // state search validation
+  function stateVal() {
+    var stateSearch = document.querySelector('#state-search').value;
+    console.log('State: ' + stateSearch);
+    if (stateSearch == "") {
+      alert('Enter a State');
+      return false;
+    }
+  };
+
+  // city search validation
+  function cityVal() {
+    var citySearch = document.querySelector('#city-search').value;
+    console.log('City: ' + citySearch);
+    if (citySearch == "") {
+      alert('Enter a City');
+      return false;
+    }
+  };
+
+  // validation function
+  function validate() {
+    if (!stateVal() || !cityVal()) {
+      alert('Enter a City and State');
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+
 };//end DOM loaded
