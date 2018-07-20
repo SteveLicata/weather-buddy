@@ -20,6 +20,7 @@ window.onload = function() {
   var dewpointString = document.querySelector('.dewpoint-string');
   var forecastUrl = document.querySelector('.forecast');
 
+
   // clIck event for submit button
   document.querySelector('#submit-button').addEventListener('click', function(event){
     //prevent refresh default
@@ -112,12 +113,22 @@ window.onload = function() {
   });
 
 
+  // random background colors
+  function colorRandom() {
+    var colors = ["teal", "steelblue", "slateblue", "royalblue", "navy", "midnightblue", "mediumblue", "darkblue", "blue", "#283149"];
+    var randomColor = colors[Math.floor(Math.random()*colors.length)];
+    document.body.style.backgroundColor = randomColor;
+  };
+
+
+
   // validate submission form
 
   // submit button
   var submitButton = document.querySelector('#submit-button');
   submitButton.addEventListener('click', function(){
     validate();
+    colorRandom();
   });
 
   // state search validation
