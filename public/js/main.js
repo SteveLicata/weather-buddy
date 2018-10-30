@@ -104,12 +104,12 @@ window.onload = function() {
 
   // call function to append first batch of text
   $(function () {
-    showText("#text1", "Get the current weather", 0, 500);
+    showText("#text1", "Get the current weather", 0, 150);
   });
 
   // call function to append second batch of text
   $(function () {
-    showText("#text2", "Search by city and state", 0, 500);
+    showText("#text2", "Search by city and state", 0, 150);
   });
 
 
@@ -128,6 +128,7 @@ window.onload = function() {
   var submitButton = document.querySelector('#submit-button');
   submitButton.addEventListener('click', function(){
     validate();
+    //generate random background colors on submission
     colorRandom();
   });
 
