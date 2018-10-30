@@ -127,9 +127,13 @@ window.onload = function() {
   // submit button
   var submitButton = document.querySelector('#submit-button');
   submitButton.addEventListener('click', function(){
+    //validate inputs
     validate();
     //generate random background colors on submission
     colorRandom();
+    //hide text when submit button is pressed
+    text1.style.display = "none";
+    text2.style.display = "none";
   });
 
   // state search validation
